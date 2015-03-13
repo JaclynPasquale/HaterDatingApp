@@ -14,8 +14,8 @@ namespace HaterDatingApp.Repository
         void Add(Profile E); //
         void Delete(Profile E); //
         void Clear(); //
-        IEnumerable<Profile> GetProfiles(); //
-        Profile GetById(int id); //
+        IEnumerable<Profile> All(); //
+        Profile GetById(string id); //
        
         IQueryable<Profile> SearchFor(Expression<Func<Profile, bool>> predicate);
 

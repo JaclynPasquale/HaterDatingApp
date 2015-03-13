@@ -12,22 +12,27 @@ namespace HaterDatingApp.Repository
 {
     public class ProfileRepository : iProfileRepository
     {
-        private ProfileContext _dbContext;
+        private ProfileDBContext _dbContext;
 
         public ProfileRepository()
         {
-            _dbContext = new ProfileContext();
-            _dbContext.Profile.Load();
-            _dbContext.Dislike.Load();
+            _dbContext = new ProfileDBContext();
+            _dbContext.Profiles.Load();
+            
         }
-        public ProfileContext Context()
+        public ProfileDBContext Context()
         {
             return _dbContext;
         }
 
+        public DbSet<Model.Profile> GetDbSet()
+        {
+            return _dbContext.Profiles;
+        }
+
         public int GetCount()
         {
-            return _dbContext.Profile.Count<Model.Profile>();
+            return _dbContext.Profiles.Count<Model.Profile>();
         }
 
         public void Save()
@@ -70,17 +75,32 @@ namespace HaterDatingApp.Repository
              * Thinking forward, we want the UI window handling the Event addition to tell the user they
              * can't add duplicates
              * */
-            _dbContext.Profile.Add(P);
+            _dbContext.Profiles.Add(P);
             _dbContext.SaveChanges();
         }
         public Model.Profile GetById(string id)
         {
-            var query = from Profile in _dbContext.Profile
+            var query = from Profile in _dbContext.Profiles
                         where Profile.ApplicationUserId == id
                         select Profile;
             return query.First<Model.Profile>();
 
         }
+        public void Clear()
+        {
+            var a = this.All();
+            _dbContext.Profiles.RemoveRange(a);
+            _dbContext.SaveChanges();
+        }
+
+        public IEnumerable<Model.Profile> All()
+        {
+            // First look to see if the stash is populated. If so
+            // then return that stash otherwise do what's below.
+            var qu = from Event in _dbContext.Profiles select Event;
+            return qu.ToList<Model.Profile>();
+        }
+
         public IQueryable<Model.Profile> SearchFor(System.Linq.Expressions.Expression<Func<Model.Profile, bool>> predicate)
         {
             throw new NotImplementedException();

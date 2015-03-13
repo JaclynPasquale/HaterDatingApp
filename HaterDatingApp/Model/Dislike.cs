@@ -15,6 +15,6 @@ namespace HaterDatingApp.Model
     }
     public class DisklikeDBContext : DbContext
     {
-        public DbSet<Dislike> Movies { get; set; }
+        public DbSet<Dislike> Dislikes { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace HaterDatingApp
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/HaterDatingApp")
-    .IncludeDirectory("~/Scripts/Controllers", "*.js")
+    .IncludeDirectory("~/Scripts/App/Controllers", "*.js")
     .Include("~/Scripts/HaterDatingApp.js"));
         }
     }
