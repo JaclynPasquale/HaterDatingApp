@@ -1,7 +1,8 @@
-﻿using HaterDatingApp.Models;
+﻿using HaterDatingApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,15 +11,13 @@ namespace HaterDatingApp.Repository
     interface iProfileRepository
     {
         int GetCount(); //
-        void Add(UserProfiles E); //
-        void Delete(UserProfiles E); //
+        void Add(Profile E); //
+        void Delete(Profile E); //
         void Clear(); //
-        IEnumerable<UserProfiles> PastUserProfiless(); //
-        int CalculateMonth(UserProfiles E); //
-        IEnumerable<UserProfiles> All(); //
-        UserProfiles GetById(int id); //
-        UserProfiles GetByDate(string date); //
-        //IQueryable<UserProfiles> SearchFor(Expression<Func<UserProfiles, bool>> predicate);
+        IEnumerable<Profile> GetProfiles(); //
+        Profile GetById(int id); //
+       
+        IQueryable<Profile> SearchFor(Expression<Func<Profile, bool>> predicate);
 
     }
 }

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace HaterDatingApp.Models
+namespace HaterDatingApp.Model
 {
-    public class UserProfiles
+    public class Profile
     {
         public int ID { get; set; }
+        public int UserId { get; set; }
         public string FirstName { get; set; }
         private string LastName { get; set; }
         public string Location { get; set; }
