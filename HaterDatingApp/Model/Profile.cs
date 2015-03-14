@@ -36,7 +36,8 @@ namespace HaterDatingApp.Model
         public bool IntoWomen { get; set; }
 
         public Int16 HeightInInches { get; set; }
-        public byte[] Picture { get; set; }
+        public string PictureURL { get; set; }
+        public ICollection<Dislike> dislikes { get; set; }
 
     }
     public class ProfileDBContext : DbContext

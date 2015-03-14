@@ -13,9 +13,12 @@ namespace HaterDatingApp.Repository
     public class ProfileRepository : iProfileRepository
     {
         private ProfileDBContext _dbContext;
+        private QuestionDBContext dbContextQ;
 
         public ProfileRepository()
         {
+            dbContextQ = new QuestionDBContext();
+            dbContextQ.Questions.Load();
             _dbContext = new ProfileDBContext();
             _dbContext.Profiles.Load();
             
@@ -23,6 +26,10 @@ namespace HaterDatingApp.Repository
         public ProfileDBContext Context()
         {
             return _dbContext;
+        }
+        public QuestionDBContext Context()
+        {
+            return dbContextQ;
         }
 
         public DbSet<Model.Profile> GetDbSet()
