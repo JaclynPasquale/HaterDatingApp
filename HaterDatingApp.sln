@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaterDatingApp", "HaterDatingApp\HaterDatingApp.csproj", "{1CE97C90-B9DC-47B5-9021-F17BADB605CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaterDatingAppTests", "HaterDatingAppTests\HaterDatingAppTests.csproj", "{36751BF1-E7BD-400B-BE6C-E9E732AF4101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1CE97C90-B9DC-47B5-9021-F17BADB605CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE97C90-B9DC-47B5-9021-F17BADB605CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE97C90-B9DC-47B5-9021-F17BADB605CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36751BF1-E7BD-400B-BE6C-E9E732AF4101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36751BF1-E7BD-400B-BE6C-E9E732AF4101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36751BF1-E7BD-400B-BE6C-E9E732AF4101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36751BF1-E7BD-400B-BE6C-E9E732AF4101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

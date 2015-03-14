@@ -97,7 +97,7 @@ namespace HaterDatingApp.Repository
         {
             // First look to see if the stash is populated. If so
             // then return that stash otherwise do what's below.
-            var qu = from Event in _dbContext.Profiles select Event;
+            var qu = from Profiles in _dbContext.Profiles select Profiles;
             return qu.ToList<Model.Profile>();
         }
 
