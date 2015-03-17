@@ -1,4 +1,6 @@
-﻿using Microsoft.Owin;
+﻿using HaterDatingApp.Providers;
+using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
@@ -14,11 +16,17 @@ namespace HaterDatingApp.API
     
 public class Startup
     {
-        public void Configuration(IAppBuilder app)
-        {
-            ConfigureOAuth(app);
-	    //Rest of code is here;
-        }
+    public void Configuration(IAppBuilder app)
+    {
+        HttpConfiguration config = new HttpConfiguration();
+
+        ConfigureOAuth(app);
+
+        WebApiConfig.Register(config);
+        app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+        app.UseWebApi(config);
+
+    }
  
         public void ConfigureOAuth(IAppBuilder app)
         {
