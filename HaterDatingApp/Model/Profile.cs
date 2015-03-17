@@ -9,6 +9,11 @@ namespace HaterDatingApp.Model
 {
     public class Profile
     {
+        public Profile()
+        {
+
+        }
+
         public int Id { get; set; }
 
         public string ApplicationUserId { get; set; }

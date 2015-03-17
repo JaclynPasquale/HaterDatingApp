@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HaterDatingApp;
 using HaterDatingApp.Model;
 using HaterDatingApp.Repository;
+using System.Data.Entity;
 
 namespace HaterDatingAppTests
 {
@@ -22,9 +23,10 @@ namespace HaterDatingAppTests
             repo.Clear();
         }
         [ClassCleanup]
-        public void CleanUp()
+        public static void CleanUp()
         {
             repo.Clear();
+            repo.Dispose();
         }
         [TestCleanup]
         public void ClearDatabase()

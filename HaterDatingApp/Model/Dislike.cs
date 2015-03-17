@@ -8,6 +8,11 @@ namespace HaterDatingApp.Model
 {
     public class Dislike
     {
+
+        public Dislike()
+        {
+
+        }
         public int Id { get; set; }
         public int ProfileId { get; set; }
         public int QuestionId { get; set; }
