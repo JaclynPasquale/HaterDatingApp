@@ -4,33 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HaterDatingApp;
-using HaterDatingApp.Model;
 using System.Data.Entity;
+using HaterDatingApp.Model;
+
 
 
 namespace HaterDatingApp.Repository
 {
     public class ProfileRepository : iProfileRepository
     {
-        private ProfileDBContext _dbContext;
-        private QuestionDBContext dbContextQ;
+        private HaterDatingContext _dbContext;
+
 
         public ProfileRepository()
         {
-            dbContextQ = new QuestionDBContext();
-            dbContextQ.Questions.Load();
-            _dbContext = new ProfileDBContext();
-            _dbContext.Profiles.Load();
             
+            _dbContext = new HaterDatingContext();
+            _dbContext.Profiles.Load();
+            _dbContext = new HaterDatingContext();
+            _dbContext.Questions.Load();
         }
-        public ProfileDBContext Context()
+        public HaterDatingContext Context()
         {
             return _dbContext;
         }
-        public QuestionDBContext Context()
-        {
-            return dbContextQ;
-        }
+        //public QuestionDBContext Context()
+        //{
+        //    return dbContextQ;
+        //}
 
         public DbSet<Model.Profile> GetDbSet()
         {
@@ -85,6 +86,7 @@ namespace HaterDatingApp.Repository
             _dbContext.Profiles.Add(P);
             _dbContext.SaveChanges();
         }
+
         public Model.Profile GetById(string id)
         {
             var query = from Profile in _dbContext.Profiles
@@ -95,17 +97,18 @@ namespace HaterDatingApp.Repository
         }
         public void Clear()
         {
-            var a = this.All();
+            var a = this.GetAll();
             _dbContext.Profiles.RemoveRange(a);
             _dbContext.SaveChanges();
         }
 
-        public IEnumerable<Model.Profile> All()
+        public IQueryable<Model.Profile> GetAll()
         {
             // First look to see if the stash is populated. If so
             // then return that stash otherwise do what's below.
-            var qu = from Profiles in _dbContext.Profiles select Profiles;
-            return qu.ToList<Model.Profile>();
+            //var qu = from Profiles in _dbContext.Profiles select Profiles;
+            //return qu.ToList<Model.Profile>();
+            return _dbContext.Profiles;
         }
 
         public IQueryable<Model.Profile> SearchFor(System.Linq.Expressions.Expression<Func<Model.Profile, bool>> predicate)

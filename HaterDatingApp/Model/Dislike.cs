@@ -8,13 +8,12 @@ namespace HaterDatingApp.Model
 {
     public class Dislike
     {
-        public int ID { get; set; }
-        public Int16 UserId { get; set; }
+        public int Id { get; set; }
+        public int ProfileId { get; set; }
         public int QuestionId { get; set; }
         public int QuestionValue { get; set; }
+
+        public virtual Profile profile { get; set; }
     }
-    public class DisklikeDBContext : DbContext
-    {
-        public DbSet<Dislike> Dislikes { get; set; }
-    }
+    
 }

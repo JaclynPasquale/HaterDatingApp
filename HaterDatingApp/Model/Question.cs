@@ -8,11 +8,8 @@ namespace HaterDatingApp.Model
 {
     public class Question
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string QuestionName { get; set; } 
     }
-    public class QuestionDBContext : DbContext
-    {
-        public DbSet<Question> Questions { get; set; }
-    }
+   
 }
