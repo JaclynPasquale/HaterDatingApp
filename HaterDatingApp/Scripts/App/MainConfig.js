@@ -4,22 +4,22 @@ angular.module('HaterDatingApp')
         $routeProvider
         .when("/home", {
             controller: "HomeController",
-            templateUrl: "/App/Views/Index.html"
+            templateUrl: "/Scripts/App/Views/Home.html"
         })
 
         .when("/login", {
             controller: "LoginController",
-            templateUrl: "/App/Views/Login.html"
+            templateUrl: "/Scripts/App/Views/Login.html"
         })
 
         .when("/signup", {
             controller: "SignupController",
-            templateUrl: "/App/Views/SignUp.html"
+            templateUrl: "/Scripts/App/Views/SignUp.html"
         })
 
-        $routeProvider.when("/", {
+        .when("/", {
             
-            templateUrl: "/Views/Home/Index.cshtml"
+            templateUrl: "/Scripts/Views/Home/Index.cshtml"
         })
 
         .otherwise({ redirectTo: "/home" });
