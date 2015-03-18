@@ -1,4 +1,5 @@
-﻿using HaterDatingApp.Repository;
+﻿using HaterDatingApp.Entitities;
+using HaterDatingApp.Repository;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security.OAuth;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+
 
 namespace HaterDatingApp.Providers
 {
@@ -40,5 +42,6 @@ public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvide
             context.Validated(identity);
  
         }
+
     }
 }
