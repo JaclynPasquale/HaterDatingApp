@@ -113,6 +113,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="scripts\angular-route.min.js.map" />
     <None Include="scripts\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,8 @@
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular-sanitize.js" />
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular-scenario.js" />
@@ -148,6 +151,10 @@
     <Content Include="scripts\angular-ui-ieshiv.min.js" />
     <Content Include="scripts\angular-ui.js" />
     <Content Include="scripts\angular-ui.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\i18n\angular-locale_am-et.js" />

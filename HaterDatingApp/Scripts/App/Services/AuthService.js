@@ -1,5 +1,6 @@
 ﻿'use strict';
-app.factory('AuthService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
+angular.module("HaterDatingApp")
+.factory('AuthService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 
     var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
     var AuthServiceFactory = {};

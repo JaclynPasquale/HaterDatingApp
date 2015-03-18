@@ -1,41 +1,35 @@
-﻿var app = angular.module('HaterDatingApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+﻿'use strict';
+angular.module('HaterDatingApp')
+    .config(function ($routeProvider) {
+        $routeProvider
+        .when("/home", {
+            controller: "HomeController",
+            templateUrl: "/App/Views/Index.html"
+        })
 
+        .when("/login", {
+            controller: "LoginController",
+            templateUrl: "/App/Views/Login.html"
+        })
 
+        .when("/signup", {
+            controller: "SignupController",
+            templateUrl: "/App/Views/SignUp.html"
+        })
 
-app.config(function ($routeProvider) {
+        $routeProvider.when("/", {
+            
+            templateUrl: "/Views/Home/Index.cshtml"
+        })
 
-    app.config(function ($httpProvider) {
+        .otherwise({ redirectTo: "/home" });
+        })
+
+    .config(function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptorService');
     });
 
-    $routeProvider.when("/home", {
-        controller: "homeController",
-        templateUrl: "/App/Views/Index.html"
-    });
-
-    $routeProvider.when("/login", {
-        controller: "loginController",
-        templateUrl: "/App/Views/Login.html"
-    });
-
-    $routeProvider.when("/signup", {
-        controller: "signupController",
-        templateUrl: "/App/Views/SignUp.html"
-    });
-
-    $routeProvider.when("/orders", {
-        controller: "ordersController",
-        templateUrl: "/App/Views/orders.html"
-    });
-
-    $routeProvider.otherwise({ redirectTo: "/home" });
-})
-
-app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptorService');
-});
-
-
-app.run(['AuthService', function (AuthService) {
-    AuthService.fillAuthData();
-}]);
+angular.module('HaterDatingApp')
+    .run(['AuthService', function (AuthService) {
+        AuthService.fillAuthData();
+    }]);
