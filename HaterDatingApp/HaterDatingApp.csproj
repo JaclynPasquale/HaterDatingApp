@@ -210,15 +210,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\App\Main.js" />
+    <Content Include="Scripts\App\Partial_views\Landing.html" />
     <Content Include="Scripts\App\RoutesConfig.js" />
-    <Content Include="Scripts\App\Views\ProfileForm.html" />
-    <Content Include="Scripts\App\Views\Quiz1.html" />
+    <Content Include="Scripts\App\Partial_views\ProfileForm.html" />
+    <Content Include="Scripts\App\Partial_views\Quiz1.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\App\Controllers\HomeController.js" />
-    <Content Include="Scripts\HaterDatingApp.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -268,7 +272,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\App\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

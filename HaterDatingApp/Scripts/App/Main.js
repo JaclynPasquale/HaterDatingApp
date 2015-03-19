@@ -1,3 +1,3 @@
 ﻿; (function () {
-    angular.module("HaterDatingApp", [])
+    angular.module("HaterDatingApp", ["ngRoute"])
 }());

@@ -3,25 +3,36 @@
     .config(function ($routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl: "Scripts/App/Views/Index.html",
-            controller: "HomeController",
-            
+            templateUrl: "Scripts/App/Partial_views/Landing.html"
+           
         })
-        //.when("/", {
-        //    templateUrl: "Scripts/App/Views/Index.html",
-        //    controller: "HomeController",
+        .when("/login", {
+            templateUrl: "../Account/Login"
+         
+        })
+        .when("/register", {
+            templateUrl: "../Account/Register"
+        
+        })
+        .when("/forgotpassword", {
+            templateUrl: "../Account/ForgotPassword"
+         
+        })
+        //.when("/forgotpassword", {
+        //    templateUrl: "Views/ForgotPassword.cshtml",
+        //    controller: "AccountController",
 
         //})
-        //.when("/", {
-        //    templateUrl: "Scripts/App/Views/Index.html",
-        //    controller: "HomeController",
+        //.when("/forgotpassword", {
+        //    templateUrl: "Views/ForgotPassword.cshtml",
+        //    controller: "AccountController",
 
         //})
-        //.when("/", {
-        //    templateUrl: "Scripts/App/Views/Index.html",
-        //    controller: "HomeController",
+        //.when("/forgotpassword", {
+        //    templateUrl: "Views/ForgotPassword.cshtml",
+        //    controller: "AccountController",
 
         //})
     })
 
-});
+})();

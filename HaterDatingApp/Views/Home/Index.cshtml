@@ -1,15 +1,70 @@
 ﻿<!DOCTYPE html>
-<html ng-app>
+<html data-ng-app="HaterDatingApp">
 <head>
-    <title ng-bind="helloAngular"></title>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>AngularJS Authentication</title>
+    <link href="/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/content/site.css" rel="stylesheet" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
+
 <body>
+    @ViewBag.person
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome @ViewBag.person</a></li>
 
-    <input type="text" ng-model="helloAngular" />
-    <h1>{{helloAngular}}</h1>
+                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div ng-view>
+        </div>
+    </div>
+    <hr />
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
 
-   
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-    @Scripts.Render("~/bundles/HaterDatingApp")
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 3rd party libraries -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
+    
+    <!-- Load App main script -->
+    <script src="~/Scripts/App/Main.js"></script>
+    <script src="~/Scripts/App/RoutesConfig.js"></script>
+    <!-- Load Services -->
+    @*<script src="~/Scripts/App/Services/AuthInterceptorService.js"></script>
+    <script src="~/Scripts/App/Services/AuthService.js"></script>*@
+    <!-- Load Controllers -->
+    @*<script src="~/Scripts/App/Controllers/IndexController.js"></script>*@
+    <script src="~/Scripts/App/Controllers/HomeController.js"></script>
+    @*<script src="~/Scripts/App/Controllers/LoginController.js"></script>
+    <script src="~/Scripts/App/Controllers/SignupController.js"></script>*@
+
 </body>
 </html>
