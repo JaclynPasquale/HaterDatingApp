@@ -13,20 +13,18 @@ using System.Web.Http;
 [assembly: OwinStartup(typeof(HaterDatingApp.API.Startup))]
 namespace HaterDatingApp.API
 {
-    
-public class Startup
+    public class Startup
     {
-    public void Configuration(IAppBuilder app)
-    {
-        HttpConfiguration config = new HttpConfiguration();
+        public void Configuration(IAppBuilder app)
+        {
+            HttpConfiguration config = new HttpConfiguration();
 
-        ConfigureOAuth(app);
+            ConfigureOAuth(app);
 
-        WebApiConfig.Register(config);
-        app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-        app.UseWebApi(config);
-
-    }
+            WebApiConfig.Register(config);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseWebApi(config);
+        }
  
         public void ConfigureOAuth(IAppBuilder app)
         {

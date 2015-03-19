@@ -82,6 +82,12 @@
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -220,6 +226,8 @@
   <ItemGroup>
     <Content Include="Content\angular-ui.css" />
     <Content Include="Content\angular-ui.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\loading-bar.css" />
@@ -259,24 +267,29 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\Controllers\IndexController.js" />
-    <Content Include="Scripts\App\Controllers\LoginController.js" />
-    <Content Include="Scripts\App\Controllers\SignupController.js" />
-    <Content Include="Scripts\App\Services\AuthService.js" />
-    <Content Include="Scripts\App\Services\AuthInterceptorService.js" />
-    <Content Include="Scripts\App\Main.js" />
-    <Content Include="Scripts\App\MainConfig.js" />
-    <Content Include="Scripts\App\Views\Home.html" />
-    <Content Include="Scripts\App\Views\Login.html" />
-    <Content Include="Scripts\App\Views\ProfileForm.html" />
-    <Content Include="Scripts\App\Views\Quiz1.html" />
-    <Content Include="Scripts\App\Views\SignUp.html" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App\Controllers\IndexController.js" />
+    <Content Include="App\Controllers\LoginController.js" />
+    <Content Include="App\Controllers\SignupController.js" />
+    <Content Include="App\Services\AuthService.js" />
+    <Content Include="App\Services\AuthInterceptorService.js" />
+    <Content Include="App\Main.js" />
+    <Content Include="App\MainConfig.js" />
+    <Content Include="App\Views\Home.html" />
+    <Content Include="App\Views\Login.html" />
+    <Content Include="App\Views\ProfileForm.html" />
+    <Content Include="App\Views\Quiz1.html" />
+    <Content Include="App\Views\SignUp.html" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\App\Controllers\HomeController.js" />
+    <Content Include="App\Controllers\HomeController.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cco-loadingbar.js" />
+    <Content Include="Scripts\cco-loadingbar.min.js" />
     <Content Include="Scripts\i18n\angular-locale_am-et.js" />
     <Content Include="Scripts\i18n\angular-locale_am.js" />
     <Content Include="Scripts\i18n\angular-locale_ar-eg.js" />
@@ -441,8 +454,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jstd-scenario-adapter-config.js" />
     <Content Include="Scripts\jstd-scenario-adapter.js" />
-    <Content Include="Scripts\loading-bar.js" />
-    <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -457,8 +468,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
@@ -466,9 +475,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

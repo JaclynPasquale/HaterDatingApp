@@ -1,6 +1,6 @@
 ﻿'use strict';
 angular.module('HaterDatingApp')
-    .controller('loginController', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService) {
+    .controller('LoginController', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService) {
 
     $scope.loginData = {
         userName: "",

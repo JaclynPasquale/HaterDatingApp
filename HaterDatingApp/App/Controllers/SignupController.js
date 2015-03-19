@@ -1,6 +1,6 @@
 ﻿'use strict';
 angular.module('HaterDatingApp')
-    .controller('signupController', ['$scope', '$location', '$timeout', 'AuthService', function ($scope, $location, $timeout, AuthService) {
+    .controller('SignupController', ['$scope', '$location', '$timeout', 'AuthService', function ($scope, $location, $timeout, AuthService) {
 
     $scope.savedSuccessfully = false;
     $scope.message = "";

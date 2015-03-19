@@ -1,6 +1,6 @@
 ﻿'use strict';
 angular.module('HaterDatingApp')
-    .controller('indexController', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService) {
+    .controller('IndexController', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService) {
 
     $scope.logOut = function () {
         AuthService.logOut();

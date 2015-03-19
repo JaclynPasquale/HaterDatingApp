@@ -1,8 +1,8 @@
 ﻿'use strict';
 angular.module("HaterDatingApp")
-.factory('authInterceptorService', ['$q', '$location', 'localStorageService', function ($q, $location, localStorageService) {
+.factory('AuthInterceptorService', ['$q', '$location', 'localStorageService', function ($q, $location, localStorageService) {
 
-    var authInterceptorServiceFactory = {};
+    var AuthInterceptorServiceFactory = {};
 
     var _request = function (config) {
 
@@ -23,8 +23,8 @@ angular.module("HaterDatingApp")
         return $q.reject(rejection);
     }
 
-    authInterceptorServiceFactory.request = _request;
-    authInterceptorServiceFactory.responseError = _responseError;
+    AuthInterceptorServiceFactory.request = _request;
+    AuthInterceptorServiceFactory.responseError = _responseError;
 
-    return authInterceptorServiceFactory;
+    return AuthInterceptorServiceFactory;
 }]);

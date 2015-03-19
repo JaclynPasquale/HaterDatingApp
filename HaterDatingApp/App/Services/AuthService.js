@@ -2,7 +2,7 @@
 angular.module("HaterDatingApp")
 .factory('AuthService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 
-    var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+    var serviceBase = 'http://localhost:49734/';
     var AuthServiceFactory = {};
 
     var _authentication = {
